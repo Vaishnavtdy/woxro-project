@@ -4,7 +4,7 @@ import React from 'react'
 function Banner() {
   return (
     <>
-        <div className="ad-main">
+        <div className="main-banner">
             <img style={{width:'100vw', height:'80vh'}} src="https://img.freepik.com/free-photo/mumbai-skyline-seen-from-marine-drive-south-mumbai_469504-11.jpg?w=1060&t=st=1661027461~exp=1661028061~hmac=af91865d6394241b1413e056f073535b764df59727c307666a30998158c8192c" alt="image" />
         <Card  style={{width: '22rem', position:"absolute", top:'15%', left:'5%'}}>
       <Card.Body>
