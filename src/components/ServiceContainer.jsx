@@ -5,13 +5,6 @@ import ProductCard from "./ProductCard";
 import Slider from "react-slick";
 
 function ServiceContainer({ data }) {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-  };
   console.log(data);
   return (
     <div>
