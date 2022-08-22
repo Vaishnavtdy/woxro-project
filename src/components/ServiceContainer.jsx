@@ -1,35 +1,90 @@
 import { Grid } from "@mui/material";
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import ProductCard from "./ProductCard";
+import Slider from "react-slick";
 
 function ServiceContainer({ data }) {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+  };
   console.log(data);
   return (
     <div>
-      <Container className="mb-5">
-        <div className="d-flex justify-content-between mt-2">
-          <p>Commercial Shop</p>
-          <span>Explore More</span>
+      <Container className="mb-5 d-flex justify-content-center flex-column">
+        <div>
+          <div className="d-flex justify-content-between mt-2">
+            <p>Commercial Shop</p>
+            <span>Explore More</span>
+          </div>
+          <Grid container spacing={2} columns={10}>
+            {data.map((item) => {
+              if (JSON.parse(item.propertyType).id === 5) {
+                return <ProductCard data={item} />;
+              }
+            })}
+          </Grid>
         </div>
-        <Grid
-          container
-          spacing={2}
-          columns={10}
-          className="d-flex justify-content-evenly pt-2"
-        >
-          {/* {
-                    data.map((item)=>{
-                        if(item.propertyType[1].id === 5){
-                            return <ProductCard data={item} />
-                        }
-                    })
-                } */}
-          {/* The Api is not returning value as an object so i can't iterate through each item */}
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-        </Grid>
+
+        <div>
+          <div className="d-flex justify-content-between mt-2">
+            <p>Commercial Office</p>
+            <span>Explore More</span>
+          </div>
+          <Grid container spacing={2} columns={10}>
+            {data.map((item) => {
+              if (JSON.parse(item.propertyType).id === 6) {
+                return <ProductCard data={item} />;
+              }
+            })}
+          </Grid>
+        </div>
+
+        <div>
+          <div className="d-flex justify-content-between mt-2">
+            <p>Commercial Land</p>
+            <span>Explore More</span>
+          </div>
+          <Grid container spacing={2} columns={10}>
+            {data.map((item) => {
+              if (JSON.parse(item.propertyType).id === 7) {
+                return <ProductCard data={item} />;
+              }
+            })}
+          </Grid>
+        </div>
+
+        <div>
+          <div className="d-flex justify-content-between mt-2">
+            <p>Commercial Building</p>
+            <span>Explore More</span>
+          </div>
+          <Grid container spacing={2} columns={10}>
+            {data.map((item) => {
+              if (JSON.parse(item.propertyType).id === 8) {
+                return <ProductCard data={item} />;
+              }
+            })}
+          </Grid>
+        </div>
+
+        <div>
+          <div className="d-flex justify-content-between mt-2">
+            <p>Industrial Building</p>
+            <span>Explore More</span>
+          </div>
+          <Grid container spacing={2} columns={10}>
+            {data.map((item) => {
+              if (JSON.parse(item.propertyType).id === 9) {
+                return <ProductCard data={item} />;
+              }
+            })}
+          </Grid>
+        </div>
       </Container>
     </div>
   );

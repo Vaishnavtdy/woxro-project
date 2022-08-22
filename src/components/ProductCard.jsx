@@ -1,42 +1,40 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap";
-import { Typography } from "@mui/material";
-
-function ProductCard(props) {
-  console.log(props);
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { Row } from "react-bootstrap";
+function ProductCard({ data }) {
+  let details = JSON.parse(data.details);
+  let img = JSON.parse(data.images)[0];
+  console.log(details);
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img
-        variant="top"
-        src="https://xenticebucket21.s3.ap-south-1.amazonaws.com/image/GnDFpvqTPcCSaMLFdlam8RjBNaKLvupWrCgz9Xx3.jpg"
-      />
-      <Card.Body>
-        <div
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            display: "flex",
-          }}
-        >
-          <Typography gutterBottom variant="h6" component="div">
-            name
-          </Typography>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            margin: "5px 0px 5px 0px",
-          }}
-        >
-          <Typography>working place</Typography>
-        </div>
-        <div>
-          <Typography style={{ color: "red" }}>rs 500</Typography>
-        </div>
-        <Button>Explore Now</Button>
-      </Card.Body>
-    </Card>
+    <>
+      <Card style={{ width: "16rem" }} className="m-2">
+        <Card.Img variant="top" src={img} style={{ height: "11rem" }} />
+        <Card.Body>
+          <div className="d-flex justify-content-between">
+            <Card.Title>{details.title}</Card.Title>
+            <FavoriteBorderIcon />
+          </div>
+          <div className="d-flex">
+            <LocationOnIcon style={{ opacity: ".7" }} />
+            <Card.Text>{JSON.parse(data.location).city}</Card.Text>
+          </div>
+          <Card.Text className="text-danger mt-1">
+            RS {details.price.rate}
+            {details.price.type}
+          </Card.Text>
+          <Button
+            variant="none"
+            className="float-end pt-0"
+            style={{ color: "blue", border: "none" }}
+          >
+            Go somewhere
+          </Button>
+        </Card.Body>
+      </Card>
+    </>
   );
 }
 

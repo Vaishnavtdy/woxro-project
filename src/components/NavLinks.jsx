@@ -6,16 +6,21 @@ function NavLinks() {
     <>
       <Container>
         <Row>
-          <Col>Commercial Shop</Col>
-          <Col>Commercial Office</Col>
-          <Col>Commercial Land</Col>
-          <Col>Commercial Building</Col>
-          <Col>Industrial Building</Col>
-          <Col>Industrial Land</Col>
-          <Col>Commercial Land</Col>
-          <Col>Private Office</Col>
-          <Col>Commercial Land</Col>
-          {/* <Col>Meeting Room</Col> */}
+          <Col>
+            <span className="nav-list-hide">Commercial</span> Shop
+          </Col>
+          <Col>
+            <span className="nav-list-hide">Commercial</span> Land
+          </Col>
+          <Col>
+            <span className="nav-list-hide">Commercial</span>Office
+          </Col>
+          <Col>
+            <span className="nav-list-hide">Industrial</span>Building
+          </Col>
+          <Col>
+            <span className="nav-list-hide">Private</span>Office
+          </Col>
         </Row>
       </Container>
     </>

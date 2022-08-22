@@ -11,6 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.nav-link-wrapper{
+  display: flex;
+}
 
 .main-banner {
   background-color: #eeeeee;
@@ -18,4 +21,13 @@ code {
   width: 100%;
   border-radius: 30px;
   position: relative;
+}
+
+@media only screen and (max-width: 600px){
+  .nav-link-wrapper{
+      display: none !important;
+  }
+  .nav-list-hide {
+    display: none ;
+  }
 }

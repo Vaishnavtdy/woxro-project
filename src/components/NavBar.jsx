@@ -21,7 +21,8 @@ function NavBar() {
               width="150px"
             />
           </Navbar.Brand>
-          <div className="nav-link-wrapper d-flex">
+
+          <div className="nav-link-wrapper">
             <div className="nav-link mx-2 d-flex">
               <CampaignOutlined />
               <Nav.Link href="#post">Post Ad</Nav.Link>

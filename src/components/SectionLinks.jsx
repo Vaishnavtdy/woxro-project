@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 function SectionLinks() {
   return (
-    <div>
+    <div className="">
       <Container>
         <Row>
           <Col>Builders</Col>
